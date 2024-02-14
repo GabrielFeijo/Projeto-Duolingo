@@ -13,10 +13,11 @@ export default function Card({
 }) {
 	return (
 		<Button
-			variant='outline'
-			className={`py-8 transition-all duration-1000 border-2 ${
-				selectedWord && ` dark:border-white border-slate-900 `
-			} w-full ${opacity ? 'opacity-0' : 'opacity-100'}`}
+			className={` py-8 transition-opacity duration-1000 border ${
+				selectedWord
+					? `text-secondary hover:text-secondary `
+					: `bg-secondary text-current hover:bg-secondary`
+			} w-full ${opacity ? 'opacity-0' : 'opacity-100'} `}
 			onClick={handleClick}
 		>
 			{text}
