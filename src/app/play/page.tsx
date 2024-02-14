@@ -49,6 +49,7 @@ const Page = () => {
 		}, 1000);
 
 		if (gameHistory.wordsIndex === words.pt.length) {
+			clearTimeout(timer);
 			setModal({
 				modalMessage: Environment.WIN_MESSAGE,
 				win: true,
@@ -142,6 +143,7 @@ const Page = () => {
 				<Modal
 					message={modal.modalMessage}
 					hits={gameHistory.wordsIndex}
+					time={Environment.MAX_SECONDS - time}
 					win={modal.win}
 				/>
 			)}

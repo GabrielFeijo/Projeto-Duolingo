@@ -5,25 +5,28 @@ import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid';
 export default function Modal({
 	message,
 	hits,
+	time,
 	win,
 }: {
 	message: string;
 	hits: number;
+	time: number;
 	win: boolean;
 }) {
 	return (
 		<div className='fixed z-10 flex h-full w-full flex-col items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm'>
-			<div className='bg-background w-96 p-4 rounded text-center font-semibold text-sm relative flex items-center flex-col border-2 border-current'>
-				<div className='absolute -top-8 bg-current rounded-full'>
+			<div className='bg-background w-96 p-4 rounded text-center font-semibold text-sm relative flex items-center flex-col border border-current'>
+				<div className='absolute -top-8 bg-current rounded-full p-2'>
 					{win ? (
-						<CheckIcon className='w-14 h-14 text-secondary' />
+						<CheckIcon className='w-10 h-10 text-secondary' />
 					) : (
-						<XMarkIcon className='w-14 h-14 text-secondary' />
+						<XMarkIcon className='w-10 h-10 text-secondary' />
 					)}
 				</div>
 
-				<p className='mt-4'>{message}</p>
-				<p className='mt-4'>Sua pontuação: {hits}</p>
+				<p className='mt-6'>{message}</p>
+				<p className='mt-4'>Tempo: {time} segundos</p>
+				<p className='mt-2'>Pontuação: {hits} pontos</p>
 
 				<Link
 					className={buttonVariants({
