@@ -27,7 +27,7 @@ Também é bom ter um editor para trabalhar com o código como [VSCode](https://
 
 ---
 
-### 🎲 Colocando o backend para funcionar:
+### 🎲 Colocando o projeto para funcionar localmente:
 
 ```bash
 # Clone o repositório
